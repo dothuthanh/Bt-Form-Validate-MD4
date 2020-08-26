@@ -31,6 +31,8 @@ public class User implements Validator {
     private String number;
     @Min(18)
     private String age;
+
+    @NotEmpty
     @Email
     private String email;
 

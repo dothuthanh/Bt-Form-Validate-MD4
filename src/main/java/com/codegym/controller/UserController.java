@@ -26,6 +26,7 @@ public class UserController {
 
     @PostMapping("/validateUser")
     public ModelAndView checkValidity(@Validated @ModelAttribute("user") User user, BindingResult bindingResult) {
+       new User().validate(user,bindingResult);
         if (bindingResult.hasFieldErrors()) {
             ModelAndView model = new ModelAndView("index");
             return model;
